@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('todos','TodoController@index');
+Route::post('todos/post','TodoController@store')->name('todo.store');
+Route::get('todos/delete/{id}','TodoController@destory')->name('todo.delete');
+Route::post('ajax/get/{id}','TodoController@ajaxGet')->name('ajax.get');
